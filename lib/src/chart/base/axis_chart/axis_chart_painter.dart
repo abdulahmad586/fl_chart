@@ -284,6 +284,7 @@ abstract class AxisChartPainter<D extends AxisChartData>
                 to.dy + padding.top,
               ),
             ),
+            label.angle,
           );
         }
       }
@@ -371,6 +372,7 @@ abstract class AxisChartPainter<D extends AxisChartData>
                 to.dy - padding.bottom,
               ),
             ),
+            label.angle,
           );
         }
       }

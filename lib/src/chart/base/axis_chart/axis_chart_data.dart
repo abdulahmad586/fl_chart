@@ -1092,13 +1092,14 @@ class HorizontalLineLabel extends FlLineLabel with EquatableMixin {
   /// size, ... of the text.
   /// Drawing text will retrieve through [labelResolver],
   /// you can override it with your custom data.
-  /// /// [show] determines showing label or not.
+  /// [show] determines showing label or not.
   HorizontalLineLabel({
     EdgeInsets? padding,
     super.style,
     Alignment? alignment,
     super.show = false,
     String Function(HorizontalLine)? labelResolver,
+    super.angle = 0.0,
   })  : labelResolver =
             labelResolver ?? HorizontalLineLabel.defaultLineLabelResolver,
         super(
@@ -1126,6 +1127,7 @@ class HorizontalLineLabel extends FlLineLabel with EquatableMixin {
       alignment: Alignment.lerp(a.alignment, b.alignment, t),
       labelResolver: b.labelResolver,
       show: b.show,
+      angle: lerpDouble(a.angle, b.angle, t)!,
     );
   }
 
@@ -1137,6 +1139,7 @@ class HorizontalLineLabel extends FlLineLabel with EquatableMixin {
         padding,
         style,
         alignment,
+        angle,
       ];
 }
 
@@ -1154,6 +1157,7 @@ class VerticalLineLabel extends FlLineLabel with EquatableMixin {
     Alignment? alignment,
     bool? show,
     String Function(VerticalLine)? labelResolver,
+    super.angle = 0.0,
   })  : labelResolver =
             labelResolver ?? VerticalLineLabel.defaultLineLabelResolver,
         super(
@@ -1188,6 +1192,7 @@ class VerticalLineLabel extends FlLineLabel with EquatableMixin {
       alignment: Alignment.lerp(a.alignment, b.alignment, t),
       labelResolver: b.labelResolver,
       show: b.show,
+      angle: lerpDouble(a.angle, b.angle, t)!,
     );
   }
 
@@ -1199,6 +1204,7 @@ class VerticalLineLabel extends FlLineLabel with EquatableMixin {
         padding,
         style,
         alignment,
+        angle,
       ];
 }
 
